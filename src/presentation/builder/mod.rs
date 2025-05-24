@@ -311,6 +311,7 @@ impl<'a> PresentationBuilder<'a> {
                 self.push_image_from_path(path, title, source_position)?
             }
             MarkdownElement::Alert { alert_type, title, lines } => self.push_alert(alert_type, title, lines)?,
+            MarkdownElement::PauseCommand { source_position } => self.push_pause(),
         };
         if should_clear_last {
             self.slide_state.last_element = LastElement::Other;

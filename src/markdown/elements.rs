@@ -65,6 +65,9 @@ pub(crate) enum MarkdownElement {
         /// The content lines in this alert.
         lines: Vec<Line<RawColor>>,
     },
+
+    /// Inline pause command
+    PauseCommand { source_position: SourcePosition },
 }
 
 #[derive(Clone, Copy, Debug, Default)]
